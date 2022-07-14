@@ -1,9 +1,12 @@
 package com.example.notetakingapp.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 
+@Parcelize
 @Entity(tableName = "Notes")
 data class Notes(
 
@@ -15,4 +18,4 @@ data class Notes(
     var date: String,
     var priority: String
 
-)
+): Parcelable
