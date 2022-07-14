@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.notetakingapp.ui.Fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Notes App"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_editNotesFragment"
             app:destination="@id/editNotesFragment" />
@@ -20,8 +20,8 @@
     <fragment
         android:id="@+id/addNotesFragment"
         android:name="com.example.notetakingapp.ui.Fragments.AddNotesFragment"
-        android:label="fragment_add_notes"
-        tools:layout="@layout/fragment_add_notes" >
+        android:label="Add new notes"
+        tools:layout="@layout/fragment_add_notes">
         <action
             android:id="@+id/action_addNotesFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
