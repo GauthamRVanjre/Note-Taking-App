@@ -21,7 +21,7 @@ abstract class NotesDatabase :RoomDatabase(){
                 return tempInstance
             }
             synchronized(this){
-                val roomDatabaseInstance = Room.databaseBuilder(context,NotesDatabase::class.java,"Notes").build()
+                val roomDatabaseInstance = Room.databaseBuilder(context,NotesDatabase::class.java,"Notes").allowMainThreadQueries().build()
                 INSTANCE = roomDatabaseInstance
                 return return roomDatabaseInstance
             }
