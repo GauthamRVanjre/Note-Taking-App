@@ -6,7 +6,6 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.notetakingapp.R
@@ -30,13 +29,18 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         setHasOptionsMenu(true)
+
+
+        //setting layout manager
+        val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+        binding.rcvAllNotes.layoutManager = staggeredGridLayoutManager
+
         binding.btnAddNote.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_addNotesFragment)
         }
         viewModel.getNotes().observe(viewLifecycleOwner,{
             notesList ->
-                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
-                binding.rcvAllNotes.layoutManager = staggeredGridLayoutManager
+                myNotes = notesList as ArrayList<Notes>
                 notesAdapter = NotesAdapter(requireContext(),notesList)
                 binding.rcvAllNotes.adapter = notesAdapter
         })
@@ -45,8 +49,6 @@ class HomeFragment : Fragment() {
             viewModel.getNotes().observe(viewLifecycleOwner,{
                     notesList ->
                 myNotes = notesList as ArrayList<Notes>
-                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
-                binding.rcvAllNotes.layoutManager = staggeredGridLayoutManager
                 notesAdapter = NotesAdapter(requireContext(),notesList)
                 binding.rcvAllNotes.adapter = notesAdapter
             })
@@ -56,8 +58,6 @@ class HomeFragment : Fragment() {
             viewModel.getHighNotes().observe(viewLifecycleOwner,{
                     notesList ->
                 myNotes = notesList as ArrayList<Notes>
-                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
-                binding.rcvAllNotes.layoutManager = staggeredGridLayoutManager
                 notesAdapter = NotesAdapter(requireContext(),notesList)
                 binding.rcvAllNotes.adapter = notesAdapter
             })
@@ -67,9 +67,8 @@ class HomeFragment : Fragment() {
             viewModel.getMediumNotes().observe(viewLifecycleOwner,{
                     notesList ->
                 myNotes = notesList as ArrayList<Notes>
-                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
-                binding.rcvAllNotes.layoutManager = staggeredGridLayoutManager
-                binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
+                notesAdapter = NotesAdapter(requireContext(),notesList)
+                binding.rcvAllNotes.adapter = notesAdapter
             })
         }
 
@@ -77,9 +76,8 @@ class HomeFragment : Fragment() {
             viewModel.getLowNotes().observe(viewLifecycleOwner,{
                     notesList ->
                 myNotes = notesList as ArrayList<Notes>
-                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
-                binding.rcvAllNotes.layoutManager = staggeredGridLayoutManager
-                binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
+                notesAdapter = NotesAdapter(requireContext(),notesList)
+                binding.rcvAllNotes.adapter = notesAdapter
             })
         }
 
@@ -114,6 +112,8 @@ class HomeFragment : Fragment() {
                 newFilteredList.add(i)
             }
         }
+
+        notesAdapter.filteredNotes(newFilteredList)
     }
 
 

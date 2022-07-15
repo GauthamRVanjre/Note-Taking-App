@@ -2,7 +2,6 @@ package com.example.notetakingapp.ui.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -11,9 +10,14 @@ import com.example.notetakingapp.databinding.ListNotesBinding
 import com.example.notetakingapp.model.Notes
 import com.example.notetakingapp.ui.Fragments.HomeFragmentDirections
 
-class NotesAdapter( val requireContext: Context, val notesList: List<Notes>) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter( val requireContext: Context, var notesList: List<Notes>) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
     class NotesViewHolder(val binding: ListNotesBinding):RecyclerView.ViewHolder(binding.root)
+
+    fun filteredNotes(newFilteredList: ArrayList<Notes>){
+        notesList = newFilteredList
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         return NotesViewHolder(
