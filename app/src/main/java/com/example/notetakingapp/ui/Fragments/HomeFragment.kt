@@ -34,6 +34,38 @@ class HomeFragment : Fragment() {
                 binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
         })
 
+        binding.allNotes.setOnClickListener {
+            viewModel.getNotes().observe(viewLifecycleOwner,{
+                    notesList ->
+                binding.rcvAllNotes.layoutManager = GridLayoutManager(requireContext(),2)
+                binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
+            })
+        }
+
+        binding.filterHigh.setOnClickListener {
+            viewModel.getHighNotes().observe(viewLifecycleOwner,{
+                    notesList ->
+                binding.rcvAllNotes.layoutManager = GridLayoutManager(requireContext(),2)
+                binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
+            })
+        }
+
+        binding.filterMedium.setOnClickListener {
+            viewModel.getMediumNotes().observe(viewLifecycleOwner,{
+                    notesList ->
+                binding.rcvAllNotes.layoutManager = GridLayoutManager(requireContext(),2)
+                binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
+            })
+        }
+
+        binding.filterLow.setOnClickListener {
+            viewModel.getLowNotes().observe(viewLifecycleOwner,{
+                    notesList ->
+                binding.rcvAllNotes.layoutManager = GridLayoutManager(requireContext(),2)
+                binding.rcvAllNotes.adapter = NotesAdapter(requireContext(),notesList)
+            })
+        }
+
         return binding.root
     }
 
