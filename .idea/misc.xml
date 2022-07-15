@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/drawable/delete_sheet.xml" value="0.2703125" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/drawable/edit_txt_shape.xml" value="0.2703125" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/drawable/green_dot.xml" value="0.2703125" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/drawable/ic_btn_filter_shape.xml" value="0.2703125" />
@@ -12,12 +13,13 @@
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/drawable/yes_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
-        <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/dialog_delete.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/dialog_delete.xml" value="0.16" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/fragment_add_notes.xml" value="0.1" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/fragment_edit_notes.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/layout/list_notes.xml" value="0.2" />
         <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/menu/delete_menu.xml" value="0.25025641025641027" />
+        <entry key="..\:/Users/ACER/Desktop/NoteTakingapp/app/src/main/res/menu/search_menu.xml" value="0.2351851851851852" />
       </map>
     </option>
   </component>
