@@ -11,14 +11,79 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_filter"
+                />
+
+            <TextView
+                android:id="@+id/filter_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_color"
+                android:textSize="18sp"
+                android:background="@drawable/ic_btn_filter_shape"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginStart="5dp"
+                android:text="High"/>
+
+            <TextView
+                android:id="@+id/filter_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/yellow_color"
+                android:textSize="18sp"
+                android:background="@drawable/ic_btn_filter_shape"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:text="Medium"/>
+
+            <TextView
+                android:id="@+id/filter_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green_color"
+                android:textSize="18sp"
+                android:background="@drawable/ic_btn_filter_shape"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:text="Low"/>
+
+
+
+
+        </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvAllNotes"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_add_note"
